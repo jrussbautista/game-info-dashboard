@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Icons } from './ui/icons';
 
 type Props = {
@@ -16,7 +16,11 @@ function SearchBar({
   value,
   submitButtonProps = { disabled: false, isLoading: false },
 }: Props) {
-  const [searchText, setSearchText] = useState(value || '');
+  const [searchText, setSearchText] = useState('');
+
+  useEffect(() => {
+    setSearchText(value || '');
+  }, [value]);
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();

@@ -4,18 +4,15 @@ import { useEffect, useState } from 'react';
 import { Game } from '@/types';
 import { getGames } from '@/services/games';
 import GameList from '@/components/games/GameList';
-import SearchBar from '@/components/SearchBar';
 import ErrorMessage from '@/components/ErrorMessage';
 import GameListSkeleton from '@/components/games/GameListSkeleton';
-import { useRouter, useSearchParams } from 'next/navigation';
-import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState('');
   const [games, setGames] = useState<Game[]>([]);
 
-  const router = useRouter();
   const searchParams = useSearchParams();
   const search = searchParams.get('search') || undefined;
 
@@ -36,30 +33,13 @@ export default function Home() {
     fetchGames();
   }, [search]);
 
-  function handleSearchSubmit(searchValue: string) {
-    const url = searchValue ? `/?search=${searchValue}` : '/';
-    router.push(url);
+  if (isLoading) {
+    return <GameListSkeleton />;
   }
 
-  return (
-    <>
-      <div className="mb-10 items-center justify-between lg:flex">
-        <div className="mb-2 lg:mb-0">
-          <Link href="/" className="text-3xl">
-            Games
-          </Link>
-        </div>
-        <SearchBar
-          onSubmit={handleSearchSubmit}
-          value={search}
-          submitButtonProps={{ isLoading, disabled: isLoading }}
-        />
-      </div>
-      {isLoading && <GameListSkeleton />}
+  if (error) {
+    return <ErrorMessage description={error} />;
+  }
 
-      {error && <ErrorMessage description={error} />}
-
-      {!isLoading && !error && <GameList games={games} />}
-    </>
-  );
+  return <GameList games={games} />;
 }

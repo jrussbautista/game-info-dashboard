@@ -1,5 +1,6 @@
 import './globals.css';
 import type { Metadata } from 'next';
+import Nav from '@/components/Nav';
 
 export const metadata: Metadata = {
   title: 'Rawg',
@@ -13,8 +14,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <body className="container py-6">
-        <main>{children}</main>
+      <body>
+        <Nav />
+        <main className="container py-6">{children}</main>
       </body>
     </html>
   );
