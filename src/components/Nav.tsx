@@ -15,7 +15,7 @@ function Nav() {
   }
 
   return (
-    <nav className="dark:bg sticky top-0 z-10 py-6 dark:bg-background">
+    <nav className="sticky top-0 z-10 bg-white py-6 dark:bg-background">
       <div className="container items-center justify-between lg:flex">
         <div className="mb-2 lg:mb-0">
           <Link href="/" className="text-3xl">

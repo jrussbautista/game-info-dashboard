@@ -11,10 +11,10 @@ function GameListSkeleton() {
     <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
       {items.map((item) => (
         <div key={item}>
-          <Skeleton className="mb-4 h-[300px] w-full" />
-          <Skeleton className="mb-2 h-[20px] w-3/5" />
-          <Skeleton className="mb-2 h-[10px] w-full" />
-          <Skeleton className="h-[10px] w-full" />
+          <Skeleton className="mb-4 h-[300px] w-full bg-slate-400 dark:bg-muted" />
+          <Skeleton className="mb-2 h-[20px] w-3/5 bg-slate-400 dark:bg-muted" />
+          <Skeleton className="mb-2 h-[10px] w-full bg-slate-400 dark:bg-muted" />
+          <Skeleton className="h-[10px] w-full bg-slate-400 dark:bg-muted" />
         </div>
       ))}
     </div>
