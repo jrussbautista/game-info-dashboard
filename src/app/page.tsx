@@ -6,6 +6,7 @@ import { getGames } from '@/services/games';
 import GameList from '@/components/games/GameList';
 import SearchBar from '@/components/SearchBar';
 import ErrorMessage from '@/components/ErrorMessage';
+import GameListSkeleton from '@/components/games/GameListSkeleton';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 
@@ -54,7 +55,7 @@ export default function Home() {
           submitButtonProps={{ isLoading, disabled: isLoading }}
         />
       </div>
-      {isLoading && <p className="text-center">loading...</p>}
+      {isLoading && <GameListSkeleton />}
 
       {error && <ErrorMessage description={error} />}
 
