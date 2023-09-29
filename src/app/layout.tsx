@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import Nav from '@/components/Nav';
 
 export const metadata: Metadata = {
-  title: 'Rawg',
+  title: 'Games Info Dashboard',
   description: 'discover new games',
 };
 

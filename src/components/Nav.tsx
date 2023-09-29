@@ -19,7 +19,7 @@ function Nav() {
       <div className="container items-center justify-between lg:flex">
         <div className="mb-2 lg:mb-0">
           <Link href="/" className="text-3xl">
-            Games Library
+            Games Info
           </Link>
         </div>
         <SearchBar onSubmit={handleSearchSubmit} value={search} />
