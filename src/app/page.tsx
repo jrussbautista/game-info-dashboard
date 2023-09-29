@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { Game } from '@/types';
-import { getGames } from '@/services/games';
+import { DEFAULT_PAGE_SIZE, getGames } from '@/services/games';
 import GameList from '@/components/games/GameList';
 import ErrorMessage from '@/components/ErrorMessage';
 import GameListSkeleton from '@/components/games/GameListSkeleton';
@@ -20,7 +20,10 @@ export default function Home() {
     async function fetchGames() {
       try {
         setIsLoading(true);
-        const { results } = await getGames({ search });
+        const { results } = await getGames({
+          search,
+          page_size: DEFAULT_PAGE_SIZE,
+        });
         setGames(results);
         setIsLoading(false);
       } catch (error) {

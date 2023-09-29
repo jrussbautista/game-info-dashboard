@@ -11,11 +11,9 @@ type GameResponse = {
   results: Game[];
 };
 
-export const DEFAULT_PAGE_SIZE = 40;
+export const DEFAULT_PAGE_SIZE = 20;
 
-export async function getGames(
-  params: GetGameParams = { page_size: DEFAULT_PAGE_SIZE }
-): Promise<GameResponse> {
+export async function getGames(params: GetGameParams): Promise<GameResponse> {
   const { data } = await base.get('games', { params });
   return data as GameResponse;
 }
