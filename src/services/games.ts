@@ -2,7 +2,8 @@ import { Game } from '@/types';
 import base from './base';
 
 type GetGameParams = {
-  page_size: number;
+  page_size?: number;
+  search?: string;
 };
 
 type GameResponse = {

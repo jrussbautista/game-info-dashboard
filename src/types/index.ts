@@ -6,9 +6,3 @@ export type Game = {
   background_image: string;
   rating: string;
 };
-
-export enum Status {
-  LOADING = 'loading',
-  SUCCESS = 'success',
-  ERROR = 'error',
-}
