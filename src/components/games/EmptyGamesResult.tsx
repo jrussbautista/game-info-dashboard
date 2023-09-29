@@ -2,9 +2,9 @@ import Image from 'next/image';
 
 function EmptyGamesResult() {
   return (
-    <div className="text-center flex flex-col items-center">
-      <p className="text-xl font-light mb-2">Ooops!</p>
-      <p className="text-lg font-semibold mb-4">No games found.</p>
+    <div className="flex flex-col items-center text-center">
+      <p className="mb-2 text-xl font-light">Ooops!</p>
+      <p className="mb-4 text-lg font-semibold">No games found.</p>
       <Image
         src="/images/empty.svg"
         width={400}

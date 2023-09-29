@@ -43,7 +43,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="mb-10 lg:flex items-center justify-between">
+      <div className="mb-10 items-center justify-between lg:flex">
         <div className="mb-2 lg:mb-0">
           <Link href="/" className="text-3xl">
             Games

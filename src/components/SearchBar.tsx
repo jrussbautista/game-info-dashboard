@@ -28,7 +28,7 @@ function SearchBar({
       <div className="flex items-center space-x-2">
         <Input
           type="text"
-          className="px-3 py-2 w-full lg:w-80"
+          className="w-full px-3 py-2 lg:w-80"
           placeholder="Search..."
           onChange={(e) => setSearchText(e.target.value)}
           value={searchText}
@@ -47,7 +47,7 @@ function SearchBar({
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="w-6 h-6"
+              className="h-6 w-6"
             >
               <path
                 strokeLinecap="round"

@@ -5,7 +5,6 @@ export type Genre = {
 
 export type Game = {
   id: string;
-  slug: string;
   name: string;
   released: string;
   background_image: string;
