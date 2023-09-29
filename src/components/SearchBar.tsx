@@ -28,7 +28,7 @@ function SearchBar({
       <div className="flex items-center space-x-2">
         <Input
           type="text"
-          className="px-3 py-2 w-full md:w-80"
+          className="px-3 py-2 w-full lg:w-80"
           placeholder="Search..."
           onChange={(e) => setSearchText(e.target.value)}
           value={searchText}

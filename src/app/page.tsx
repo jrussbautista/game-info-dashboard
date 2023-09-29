@@ -6,6 +6,7 @@ import { getGames } from '@/services/games';
 import GameList from '@/components/games/GameList';
 import SearchBar from '@/components/SearchBar';
 import { useRouter, useSearchParams } from 'next/navigation';
+import Link from 'next/link';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -38,11 +39,11 @@ export default function Home() {
 
   return (
     <>
-      <div className="mb-10 md:flex items-center justify-between">
+    <div className="mb-10 lg:flex items-center justify-between">
         <div className="mb-2 lg:mb-0">
-          <a href="/" className="text-3xl">
+          <Link href="/" className="text-3xl">
             Games
-          </a>
+          </Link>
         </div>
         <SearchBar
           onSubmit={handleSearchSubmit}
@@ -50,7 +51,6 @@ export default function Home() {
           submitButtonProps={{ isLoading, disabled: isLoading }}
         />
       </div>
-
       {isLoading ? (
         <p className="text-center">loading...</p>
       ) : (

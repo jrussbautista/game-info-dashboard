@@ -13,10 +13,7 @@ function GameList({ games }: Props) {
   }
 
   return (
-    <div
-      className="grid gap-6"
-      style={{ gridTemplateColumns: 'repeat(4, minmax(0px, 1fr))' }}
-    >
+    <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
       {games.map((game) => (
         <GameCard key={game.id} game={game} />
       ))}
