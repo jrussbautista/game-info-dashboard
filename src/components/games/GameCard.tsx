@@ -16,6 +16,7 @@ function GameCard({ game }: Props) {
             className="absolute left-0 top-0 h-full w-full object-cover duration-300 ease-in-out group-hover:scale-110"
             width={400}
             height={400}
+            objectFit="cover"
           />
         )}
       </div>

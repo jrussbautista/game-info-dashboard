@@ -16,7 +16,7 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body>
         <Nav />
-        <main className="container py-6">{children}</main>
+        <main className="container py-4">{children}</main>
       </body>
     </html>
   );

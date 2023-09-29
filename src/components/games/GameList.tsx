@@ -13,7 +13,7 @@ function GameList({ games }: Props) {
   }
 
   return (
-    <div className="mb-10 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
+    <div className="mb-10 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
       {games.map((game) => (
         <GameCard key={game.id} game={game} />
       ))}
