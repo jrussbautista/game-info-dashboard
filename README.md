@@ -12,20 +12,14 @@ npm install
 npm run dev
 ```
 
-## Format project using prettier
+## Format using prettier
 
 ```
 npm run format
 ```
 
-## Lint using slint
+## Lint using eslint
 
 ```
 npm run lint
-```
-
-## Run unit tests
-
-```
-npm run test
 ```
