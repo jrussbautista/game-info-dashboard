@@ -5,11 +5,13 @@ import { Game } from '@/types';
 import { getGames } from '@/services/games';
 import GameList from '@/components/games/GameList';
 import SearchBar from '@/components/SearchBar';
+import ErrorMessage from '@/components/ErrorMessage';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState('');
   const [games, setGames] = useState<Game[]>([]);
 
   const router = useRouter();
@@ -24,7 +26,8 @@ export default function Home() {
         setGames(results);
         setIsLoading(false);
       } catch (error) {
-        console.error('error', error);
+        let err = error as Error;
+        setError(err.message);
         setIsLoading(false);
       }
     }
@@ -39,7 +42,7 @@ export default function Home() {
 
   return (
     <>
-    <div className="mb-10 lg:flex items-center justify-between">
+      <div className="mb-10 lg:flex items-center justify-between">
         <div className="mb-2 lg:mb-0">
           <Link href="/" className="text-3xl">
             Games
@@ -51,11 +54,11 @@ export default function Home() {
           submitButtonProps={{ isLoading, disabled: isLoading }}
         />
       </div>
-      {isLoading ? (
-        <p className="text-center">loading...</p>
-      ) : (
-        <GameList games={games} />
-      )}
+      {isLoading && <p className="text-center">loading...</p>}
+
+      {error && <ErrorMessage description={error} />}
+
+      {!isLoading && !error && <GameList games={games} />}
     </>
   );
 }
